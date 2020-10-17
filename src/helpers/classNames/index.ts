@@ -1,6 +1,4 @@
-export const classNames = function <T = string>(
-  ...list: (string | Record<string, boolean>)[]
-): T {
+export const classNames = function <T = string>(...list: (string | Record<string, boolean>)[]): T {
   return list
     .map((className) => {
       if (typeof className === 'string') {

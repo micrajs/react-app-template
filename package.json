@@ -6,14 +6,16 @@
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack --config .config/build/webpack.config.ts",
     "format": "prettier --write 'src/**/*.{ts,tsx}' --config .prettierrc.js",
-    "lint": "eslint 'src/**/*.{ts,tsx}' --config .config/code-style/.eslintrc.js",
-    "lint:cache": "yarn lint --cache --cache-location .config/code-style/.eslintcache",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --config .eslintrc.js",
+    "lint:cache": "yarn lint --cache",
     "lint:fix": "yarn lint:cache --fix",
-    "start": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack-dev-server --open --config .config/build/webpack.config.ts"
+    "start": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack-dev-server --open --config .config/build/webpack.config.ts",
+    "test": "jest -i -c jest.config.js"
   },
   "dependencies": {
     "@loadable/component": "^5.13.2",
     "@micra/application": "^0.0.8",
+    "@micra/core": "^0.0.7",
     "@micra/react-dom-kernel": "^0.0.4",
     "@micra/react-route-registry": "^0.0.3",
     "@micra/service-provider": "^0.0.2",
@@ -74,6 +76,7 @@
     "eslint-plugin-react": "^7.21.3",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.5.3",
     "mini-css-extract-plugin": "^0.11.3",
     "node-sass": "^4.14.1",
     "postcss-loader": "^4.0.3",
@@ -81,6 +84,7 @@
     "react-hot-loader": "^4.13.0",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.3.0",
+    "ts-jest": "^26.4.1",
     "ts-loader": "^8.0.4",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3",

@@ -13,8 +13,11 @@ import { StoreManager } from 'app/store/ReduxStoreManager/types';
 
 export class ReduxStoreManager implements StoreManager {
   public store!: Store;
+
   protected combinedReducer: Reducer;
+
   protected reducers: ReducersMapObject;
+
   protected keysToRemove: (keyof ReduxStoreManager['reducers'])[] = [];
 
   constructor() {
@@ -25,7 +28,7 @@ export class ReduxStoreManager implements StoreManager {
   protected cleanUp(state: any) {
     if (this.keysToRemove.length > 0) {
       state = { ...state };
-      for (let key of state) {
+      for (const key of state) {
         delete state[key];
       }
       this.keysToRemove = [];

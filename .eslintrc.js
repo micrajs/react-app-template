@@ -1,10 +1,12 @@
+const { join } = require('path');
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
   },
   extends: [
-		'prettier',
+    'prettier',
     'airbnb-base',
     'eslint:recommended',
     'plugin:react/recommended',
@@ -19,6 +21,20 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
+  parserOptions: {
+    project: join(__dirname, 'tsconfig.json'),
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   rules: {
     indent: ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],

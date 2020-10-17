@@ -18,11 +18,10 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "isolatedModules": true,
     "outDir": ".micra",
     "target": "es5",
     "baseUrl": "src"
   },
   "exclude": ["node_modules", ".micra", ".config"],
-  "include": ["**/*.ts", "**/*.ts", "src/global.d.ts"]
+  "include": ["**/*.ts", "**/*.ts", ".config/build/webpack.config.ts", "src/global.d.ts"]
 }

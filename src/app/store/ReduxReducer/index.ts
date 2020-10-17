@@ -4,7 +4,9 @@ type Reducer<S = any, A extends Action = Action<string>> = (state: S, action: A)
 
 export class ReduxReducer<S = any, A extends Action = Action<string>> {
   protected name: string;
+
   protected initialState: S;
+
   protected actionHandlers: Map<string, Reducer<S, A>[]>;
 
   constructor(name: string, initialState: S) {
