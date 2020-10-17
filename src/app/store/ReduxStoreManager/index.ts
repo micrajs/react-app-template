@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import {
   Action,
   applyMiddleware,
@@ -28,9 +29,10 @@ export class ReduxStoreManager implements StoreManager {
   protected cleanUp(state: any) {
     if (this.keysToRemove.length > 0) {
       state = { ...state };
-      for (const key of state) {
+      this.keysToRemove.forEach((key) => {
         delete state[key];
-      }
+      });
+
       this.keysToRemove = [];
     }
   }

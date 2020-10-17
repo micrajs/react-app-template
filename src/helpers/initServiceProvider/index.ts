@@ -3,10 +3,10 @@ import { StaticServiceProvider, ServiceContainer } from '@micra/core';
 
 const loadedResources: string[] = [];
 
-export const initServiceProvider = (serviceProvider: StaticServiceProvider) => {
+export const initServiceProvider = (ServiceProvider: StaticServiceProvider) => {
   try {
-    if (!loadedResources.includes(serviceProvider.name)) {
-      const serviceProviderInstance = new serviceProvider(app.container as ServiceContainer);
+    if (!loadedResources.includes(ServiceProvider.name)) {
+      const serviceProviderInstance = new ServiceProvider(app.container as ServiceContainer);
 
       if (serviceProviderInstance.register) {
         serviceProviderInstance.register();
@@ -17,10 +17,11 @@ export const initServiceProvider = (serviceProvider: StaticServiceProvider) => {
       }
 
       app.serviceProviders.push(serviceProviderInstance);
-      loadedResources.push(serviceProvider.name);
+      loadedResources.push(ServiceProvider.name);
     }
   } catch (e) {
-    console.error(`Failed to initialize service provider "${serviceProvider.name}"`);
+    // eslint-disable-next-line no-console
+    console.error(`Failed to initialize service provider "${ServiceProvider.name}"`);
     throw e;
   }
 };

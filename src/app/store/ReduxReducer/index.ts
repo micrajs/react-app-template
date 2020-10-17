@@ -31,7 +31,7 @@ export class ReduxReducer<S = any, A extends Action = Action<string>> {
     return (state: S = this.initialState, action: A) => {
       if (this.actionHandlers.has(action.type)) {
         return (this.actionHandlers.get(action.type) as Reducer[]).reduce(
-          (state: S, handler) => handler(state, action),
+          (newState: S, handler) => handler(newState, action),
           state,
         );
       }

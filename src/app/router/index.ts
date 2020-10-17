@@ -11,6 +11,7 @@ export class RouterServiceProvider extends ServiceProvider {
   }
 
   boot() {
+    // eslint-disable-next-line global-require
     require('pages');
   }
 }

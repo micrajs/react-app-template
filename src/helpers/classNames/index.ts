@@ -1,5 +1,5 @@
-export const classNames = function <T = string>(...list: (string | Record<string, boolean>)[]): T {
-  return list
+export const classNames = <T = string>(...list: (string | Record<string, boolean>)[]): T =>
+  list
     .map((className) => {
       if (typeof className === 'string') {
         return className;
@@ -15,4 +15,3 @@ export const classNames = function <T = string>(...list: (string | Record<string
     .join(' ')
     .replace(/\s+/g, ' ')
     .trim() as any;
-};

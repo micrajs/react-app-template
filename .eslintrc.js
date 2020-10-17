@@ -6,11 +6,11 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'prettier',
     'airbnb-base',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -36,10 +36,14 @@ module.exports = {
     },
   },
   rules: {
-    indent: ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'prettier/prettier': 'error',
+    'import/prefer-default-export': 'off',
+    'no-bitwise': 'off',
+    'no-fallthrough': 'off',
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 };
