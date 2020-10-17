@@ -1,8 +1,8 @@
 {
-  "name": "react-webpack",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@micra/react-app-template",
+  "version": "0.0.1",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack --config .config/build/webpack.config.ts",
     "format": "prettier --write 'src/**/*.{ts,tsx}' --config .prettierrc.js",
