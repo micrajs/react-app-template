@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "outDir": ".micra",
+    "target": "es5",
+    "baseUrl": "src"
+  },
+  "exclude": ["node_modules", ".micra", ".config"],
+  "include": ["**/*.ts", "**/*.ts", "src/global.d.ts"]
+}
