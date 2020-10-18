@@ -29,7 +29,7 @@ interface Window {
 }
 
 declare namespace NodeJS {
-  type ProcessEnv = EnvVariables;
+  interface ProcessEnv extends EnvVariables {}
   interface Global {
     config: Config;
     env: Env;

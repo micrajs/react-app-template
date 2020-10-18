@@ -23,5 +23,5 @@
     "baseUrl": "src"
   },
   "exclude": ["node_modules", ".micra", ".config"],
-  "include": ["**/*.ts", "**/*.ts", ".config/build/webpack.config.ts", "src/global.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
