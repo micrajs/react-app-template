@@ -8,7 +8,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx}' --config .prettierrc.js",
     "lint": "eslint 'src/**/*.{ts,tsx}' --config .eslintrc.js",
     "lint:cache": "yarn lint --cache",
-    "start": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack-dev-server --open --config .config/build/webpack.config.ts",
+    "start": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack serve --config ./.config/build/webpack.config.ts",
     "test": "jest -i -c jest.config.js"
   },
   "dependencies": {
