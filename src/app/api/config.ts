@@ -6,5 +6,8 @@ app.config.set<ApiConfig>('api', {
     rest: {
       //
     },
+    graphql: {
+      //
+    },
   },
 });
