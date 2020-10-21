@@ -5,12 +5,13 @@ import { AppConfig } from 'app/types';
 import { ApiServiceProvider } from 'app/api';
 import { StoreServiceProvider } from 'app/store';
 import { RouterServiceProvider } from 'app/router';
+import { TranslationServiceProvider } from 'app/translation';
 
 app.config.set<AppConfig>('app', {
   /**
    * Application's name
    */
-  name: 'Foody',
+  name: 'React app | Micra',
 
   /**
    * Application's URL
@@ -30,5 +31,10 @@ app.config.set<AppConfig>('app', {
   /**
    * Service providers
    */
-  services: [StoreServiceProvider, RouterServiceProvider, ApiServiceProvider],
+  services: [
+    StoreServiceProvider,
+    RouterServiceProvider,
+    ApiServiceProvider,
+    TranslationServiceProvider,
+  ],
 });

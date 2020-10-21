@@ -1,3 +1,6 @@
+import { Middleware } from '@micra/route-registry';
+
 export interface RouterConfig {
-  maybe?: void;
+  prefix?: string;
+  middlewares: Middleware[];
 }
