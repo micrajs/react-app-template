@@ -10,7 +10,6 @@ import { changeLanguage } from 'app/translation/helpers/changeLanguage';
 const App = () => {
   const { t } = useTranslation();
   const i18n = use<I18n>('translation');
-  console.log(i18n);
   const translationConfig = config('translation') as TranslationConfig;
   const onChangeLanguage = (e: React.FormEvent<HTMLSelectElement>) => {
     changeLanguage(e.currentTarget.value as Language);

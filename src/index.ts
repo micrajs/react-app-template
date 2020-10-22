@@ -1,3 +1,10 @@
 import { app } from 'app/bootstrap';
+import { needsPolyfills } from 'app/polyfills';
 
-app.run();
+if (needsPolyfills) {
+  import('app/polyfills/libraries').then(() => {
+    app.run();
+  });
+} else {
+  app.run();
+}

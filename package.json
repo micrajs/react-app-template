@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack --config .config/build/webpack.config.ts",
+    "build:prod": "cross-env NODE_ENV=production APP_ENV=prod TS_NODE_PROJECT=\".config/build/tsconfig.webpack.json\" webpack --config .config/build/webpack.config.ts",
     "format": "prettier --write 'src/**/*.{ts,tsx}' --config .prettierrc.js",
     "lint": "eslint 'src/**/*.{ts,tsx}' --config .eslintrc.js",
     "lint:cache": "yarn lint --cache",
@@ -52,6 +53,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.8",
     "@types/axios": "^0.14.0",
+    "@types/clean-webpack-plugin": "^0.1.3",
     "@types/core-js": "^2.5.4",
     "@types/history": "^4.7.8",
     "@types/html-webpack-plugin": "^3.2.3",

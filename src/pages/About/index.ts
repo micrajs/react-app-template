@@ -1,6 +1,6 @@
 import { ReactRouteRegistry } from '@micra/react-route-registry';
 import { setActiveRoute } from 'app/router/middlewares/setActiveRoute';
-import { fetchTranslations } from 'app/translation/middlewares/fetchPageTranslations';
+import { fetchPageTranslations } from 'app/translation/middlewares/fetchPageTranslations';
 
 use<ReactRouteRegistry>('router')
   .page('/about', async () => {
@@ -8,6 +8,6 @@ use<ReactRouteRegistry>('router')
   })
   .middlewares(
     setActiveRoute,
-    fetchTranslations('About'),
+    fetchPageTranslations('About'),
   )
   .as('About');

@@ -15,17 +15,17 @@ export class TranslationServiceProvider extends ServiceProvider {
       .use<Config>('config')
       .get('translation') as TranslationConfig;
 
+    // Initialize plugins
+    config.plugins.forEach(plugin => translation.use(plugin));
+
+    // Initialize service
+    translation.init(config.options);
+
     // Initialize common vocabulary
     config.languages.forEach(language => {
       if (common[language]) {
         translation.addResourceBundle(language, translation.options.defaultNS ?? 'common', common[language]);
       }
     });
-
-    // Initialize plugins
-    config.plugins.forEach(plugin => translation.use(plugin));
-
-    // Initialize service
-    translation.init(config.options);
   }
 }
