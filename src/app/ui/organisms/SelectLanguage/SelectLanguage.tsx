@@ -8,7 +8,7 @@ const SelectLanguage = ({ onChange, defaultLanguage, language, languages  }: Sel
   return (
     <select onChange={onChange} value={language ?? defaultLanguage}>
       {languages.map(language => (
-        <option key={language} value={language}>{t(`common:${language}`)}</option>
+        <option key={language} value={language}>{t(language)}</option>
       ))}
     </select>
   );
