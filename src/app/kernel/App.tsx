@@ -1,19 +1,12 @@
 import React from 'react';
-import Routes from 'app/router/Routes';
-import { Language, TranslationConfig } from 'app/translation/types';
-import { pathTo } from 'helpers/pathTo';
-import { i18n as I18n } from 'i18next';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { changeLanguage } from 'app/translation/helpers/changeLanguage';
+import Routes from 'app/router/Routes';
+import { pathTo } from 'helpers/pathTo';
+import SelectLanguage from 'app/ui/organisms/SelectLanguage';
 
 const App = () => {
   const { t } = useTranslation();
-  const i18n = use<I18n>('translation');
-  const translationConfig = config('translation') as TranslationConfig;
-  const onChangeLanguage = (e: React.FormEvent<HTMLSelectElement>) => {
-    changeLanguage(e.currentTarget.value as Language);
-  }
 
   return (
     <>
@@ -23,11 +16,7 @@ const App = () => {
           <Link to={pathTo('About')}>{t('common:menu.About')}</Link>
         </menu>
         <menu>
-        <select onChange={onChangeLanguage} value={i18n.language ?? translationConfig.defaultLanguage}>
-          {translationConfig.languages.map(language => (
-            <option key={language} value={language}>{language}</option>
-          ))}
-        </select>
+        <SelectLanguage />
         </menu>
       </header>
       <Routes />
